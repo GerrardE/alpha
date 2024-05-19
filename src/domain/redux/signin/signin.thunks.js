@@ -6,7 +6,7 @@ import { getItems } from "@infrastructure/services/thunkService";
 import * as signinActions from "./signin.actions";
 import * as countriesActions from "../localisation/countries/countries.actions";
 import * as statesActions from "../localisation/states/states.actions";
-import * as citiesActions from "../localisation/cities/cities.actions";
+// import * as citiesActions from "../localisation/cities/cities.actions";
 import signinConstants from "./signin.constants";
 
 const signin = (data, history) => async (dispatch) => {
@@ -19,7 +19,7 @@ const signin = (data, history) => async (dispatch) => {
     }
     dispatch(getItems(countriesActions, signinConstants.countriesparams));
     dispatch(getItems(statesActions, signinConstants.statesparams));
-    dispatch(getItems(citiesActions, signinConstants.citiesparams));
+    // dispatch(getItems(citiesActions, signinConstants.citiesparams));
     dispatch(signinActions.signinLoading(false));
   } catch (errors) {
     dispatch(signinActions.signinFail(errors));
